@@ -1,4 +1,4 @@
 Flask==2.0.1
 Flask-SQLAlchemy==2.5.1
-vercel-blob==0.2.0
+pg8000==1.16.6
 gunicorn==20.1.0
