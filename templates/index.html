@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Beranda - Sistem Pelanggaran{% endblock %}
+
+{% block content %}
+    <div class="jumbotron bg-light p-5 rounded-3 mb-4">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Sistem Pencatatan Pelanggaran</h1>
+            <p class="col-md-8 fs-4">Catat pelanggaran dan hitung poin secara otomatis!</p>
+            <hr class="my-4">
+            <p>Admin dapat mencatat pelanggaran, dan setiap bulan akan diumumkan total poin setiap pengguna.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a class="btn btn-primary btn-lg px-4 me-md-2" href="{{ url_for('tambah_pelanggaran') }}" role="button">
+                    <i class="fas fa-plus-circle me-2"></i>Catat Pelanggaran
+                </a>
+                <a class="btn btn-info btn-lg px-4" href="{{ url_for('laporan_bulanan', tahun=2023, bulan=8) }}" role="button">
+                    <i class="fas fa-chart-bar me-2"></i>Lihat Laporan Bulanan
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-user-edit text-primary me-2"></i>Pencatatan Pelanggaran</h5>
+                    <p class="card-text">Admin dapat dengan mudah mencatat setiap pelanggaran yang dilakukan oleh pengguna.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-calculator text-success me-2"></i>Perhitungan Poin Otomatis</h5>
+                    <p class="card-text">Sistem secara otomatis menghitung poin berdasarkan jenis pelanggaran yang telah ditentukan.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-file-alt text-info me-2"></i>Laporan Bulanan</h5>
+                    <p class="card-text">Setiap bulan, sistem menghasilkan laporan total poin per pengguna untuk pengumuman.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
